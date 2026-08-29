@@ -10,7 +10,7 @@ export default function App() {
   const gerarSenha = async () => {
     setCarregando(true);
     try {
-      const resposta = await fetch('http://127.0.0.1:8000/gerar-senha');
+      const resposta = await fetch('https://gerador-de-senhas-python.onrender.com/gerar-senha');
       const dados = await resposta.json();
       setSenha(dados.senha);
       setCopiado(false);
