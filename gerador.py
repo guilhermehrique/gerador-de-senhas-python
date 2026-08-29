@@ -1,14 +1,23 @@
 import string
 import secrets
 
-# Vamos criar "gavetas" (variáveis) para guardar cada tipo de caractere
-letras_maiusculas = string.ascii_lowercase
-letras_minusculas = string.ascii_uppercase
-numeros = string.digits
-simbolos = string.punctuation
+# 1.  balde com todos os caracteres possíveis
+opcoes = string.ascii_letters + string.digits 
 
-# Vamos pedir para o programa mostrar na tela o que tem dentro de cada gaveta
-print("Letras maiúsculas:", letras_maiusculas)
-print("Letras minúsculas:", letras_minusculas)
-print("Números:", numeros)
-print("Símbolos:", simbolos)
+# 2.  tamanho da senha que queremos?
+tamanho = 8  # Tamanho da senha
+
+# 3. texto vazio onde vamos "colar" cada caractere sorteado
+senha = ""
+
+# 4. O loop 'for' vai rodar exatamente o número de vezes definido em 'tamanho'
+for _ in range(tamanho):
+
+# 5. sorteamos um caractere aleatório do nosso balde de opções
+    sorteado = secrets.choice(opcoes)
+
+# 6. colamos o caractere sorteado na nossa senha
+    senha = senha + sorteado
+
+# 5. mostra o resultado final no terminal
+print("sua senha gerada é:", senha)
